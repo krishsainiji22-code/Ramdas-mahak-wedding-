@@ -905,11 +905,13 @@ Additional Message: ${message || "None"}
 
 Congratulations to both of you!`;
 
-    const whatsappURL =
-        "https://wa.me/?text=" +
-        encodeURIComponent(whatsappMessage);
+    const rsvpNumber = "919024896712";
 
-    window.open(whatsappURL, "_blank");
+const whatsappURL =
+    "https://wa.me/" + rsvpNumber +
+    "?text=" + encodeURIComponent(whatsappMessage);
+
+window.location.href = whatsappURL;
 }
       
 </script>
