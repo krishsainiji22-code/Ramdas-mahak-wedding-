@@ -615,28 +615,48 @@ textarea{min-height:85px;resize:vertical}
   </section>
 
   <!-- RSVP -->
-  <section class="block rsvp-section">
-    <div class="kicker">We would love to see you</div>
+<!-- RSVP SECTION -->
+<section class="block rsvp-section">
+    <div class="kicker">We Would Love To See You</div>
     <h2 class="section-title">RSVP</h2>
     <div class="section-subtitle">Please Join Us</div>
 
-    <p class="description">
-      Let us know if you will be joining the celebrations.
-    </p>
+    <p>Let us know if you will be joining the celebrations.</p>
 
-    <form class="rsvp-form" onsubmit="sendRSVP(event)">
-      <input id="guestName" required placeholder="Your name">
-      <input id="guestPhone" placeholder="Phone number">
-      <textarea id="guestMessage" placeholder="Message / number of guests"></textarea>
-      <button class="btn btn-gold" type="submit">
-        💚 Send RSVP on WhatsApp
-      </button>
+    <form id="rsvpForm" onsubmit="sendRSVP(event)">
+
+        <input
+            type="text"
+            id="guestName"
+            placeholder="Your name"
+            required>
+
+        <input
+            type="tel"
+            id="guestPhone"
+            placeholder="Phone number"
+            required>
+
+        <input
+            type="number"
+            id="guestCount"
+            placeholder="Number of guests / members"
+            min="1"
+            required>
+
+        <textarea
+            id="guestMessage"
+            placeholder="Additional message (optional)">
+        </textarea>
+
+        <button type="submit" class="btn btn-whatsapp">
+            💚 Send RSVP on WhatsApp
+        </button>
+
     </form>
+</section>
 
-    <div class="note">
-      Replace the RSVP WhatsApp number in the code before sharing.
-    </div>
-  </section>
+  
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -860,6 +880,38 @@ function sendRSVP(e){
     "noopener"
   );
 }
+  function sendRSVP(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("guestName").value.trim();
+    const phone = document.getElementById("guestPhone").value.trim();
+    const guests = document.getElementById("guestCount").value;
+    const message = document.getElementById("guestMessage").value.trim();
+
+    if (!name || !phone || !guests || Number(guests) < 1) {
+        alert("Please fill in all required details.");
+        return;
+    }
+
+    const whatsappMessage =
+`Hello Ramdas and Mahak!
+
+I would like to RSVP for your wedding.
+
+Name: ${name}
+Phone Number: ${phone}
+Number of Guests: ${guests}
+Additional Message: ${message || "None"}
+
+Congratulations to both of you!`;
+
+    const whatsappURL =
+        "https://wa.me/?text=" +
+        encodeURIComponent(whatsappMessage);
+
+    window.open(whatsappURL, "_blank");
+}
+      
 </script>
   
   <!-- Little Stars of the Family -->
@@ -885,5 +937,7 @@ function sendRSVP(e){
         With love and blessings ❤️
     </p>
 </section>
+  
+
 </body>
 </html>
