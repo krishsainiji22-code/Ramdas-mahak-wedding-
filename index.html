@@ -445,6 +445,67 @@ textarea{min-height:85px;resize:vertical}
     font-style: italic;
     margin-top: 20px;
 }
+  
+/* FAMILY AND RELATIVES SECTION */
+
+.family-section {
+    padding: 80px 20px;
+    background: #FAF6F0;
+    text-align: center;
+}
+
+.family-grid {
+  text-align: center;
+    max-width: 1100px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.family-card {
+    background: #FFFDF9;
+    border: 1px solid #E9DCCB;
+    border-radius: 22px;
+    padding: 30px 20px;
+    box-shadow: 0 5px 20px rgba(80, 40, 30, 0.06);
+}
+
+.family-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.family-card h3 {
+    color: #800020;
+    font-family: 'Cinzel', serif;
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.family-card p {
+    color: #665C58;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 4px 0;
+}
+
+@media (max-width: 600px) {
+    .family-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .family-card {
+        padding: 25px 15px;
+    }
+
+    .family-card h3 {
+        font-size: 21px;
+    }
+}
+  
 </style>
 </head>
 
@@ -966,19 +1027,13 @@ window.location.href = whatsappURL;
 
     <div class="family-grid">
 
-        <!-- Bride's Parents -->
-        <div class="family-card">
-            <div class="family-icon">🙏</div>
-            <h3>Bride's Parents</h3>
-            <p>Shri Hansraj Ji Saini Kataria</p>
-            <p>Smt. Neelam Devi</p>
-        </div>
+        
 
         <!-- Behan-Bahnoi -->
         <div class="family-card">
             <div class="family-icon">🌸</div>
             <h3>Behan-Bahnoi</h3>
-            <p>Smt. Pooja – Shri Shankar Ji</p>
+            <p>Smt. Pooja – Shri Rinku Ji</p>
             <p>Smt. Santosh – Shri Azad Ji</p>
         </div>
 
@@ -1004,12 +1059,12 @@ window.location.href = whatsappURL;
         <div class="family-card">
             <div class="family-icon">🌺</div>
             <h3>Darshan Abhilashi</h3>
-            <p>Vimal Lal, Roshan Lal</p>
+            <p>chiman Lal, Roshan Lal</p>
             <p>Om Prakash, Dharmapal</p>
             <p>Lalit, Prince, Vikram</p>
             <p>Kabir, Manish, Vishnu</p>
             <p>Himanshu</p>
-            <p>Samast Bishnoiya Parivar</p>
+            <p>Samast Bishnoliya Parivar</p>
             <p>Sambandhi Evam Mitragan</p>
         </div>
 
